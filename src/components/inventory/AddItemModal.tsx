@@ -60,8 +60,7 @@ export function AddItemModal({ open, onClose, onAdded }: AddItemModalProps) {
   const [upcLoading, setUpcLoading] = useState(false);
   const [upcError, setUpcError] = useState("");
 
-  async function handleUpcLookup(e: React.FormEvent) {
-    e.preventDefault();
+  async function handleUpcLookup() {
     const code = upcInput.trim();
     if (!code) return;
     setUpcLoading(true);
@@ -173,23 +172,25 @@ export function AddItemModal({ open, onClose, onAdded }: AddItemModalProps) {
             >
               <span>📷</span>
             </button>
-            <form onSubmit={handleUpcLookup} className="flex flex-1 gap-2">
+            <div className="flex flex-1 gap-2">
               <input
                 type="text"
                 value={upcInput}
                 onChange={e => { setUpcInput(e.target.value); setUpcError(""); }}
+                onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); void handleUpcLookup(); } }}
                 placeholder="Type or paste UPC / EAN barcode…"
                 inputMode="numeric"
                 className="flex-1 bg-[#111] border border-[#2a2a2a] text-[#f5f5f5] rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:border-[#22c55e] placeholder:text-[#525252]"
               />
               <button
-                type="submit"
+                type="button"
+                onClick={() => void handleUpcLookup()}
                 disabled={!upcInput.trim() || upcLoading}
                 className="bg-[#22c55e] disabled:bg-[#2a2a2a] disabled:text-[#525252] text-[#0f0f0f] font-semibold px-3 py-2.5 rounded-xl text-sm transition-colors shrink-0"
               >
                 {upcLoading ? "…" : "Look up"}
               </button>
-            </form>
+            </div>
           </div>
           {upcError && <p className="text-xs text-[#a3a3a3] mt-1.5">{upcError}</p>}
         </div>
