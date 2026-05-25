@@ -24,7 +24,7 @@ export function BarcodeScanner({ onResult, onClose }: Props) {
   const stoppedRef = useRef(false);
 
   useEffect(() => {
-    let controls: { stop: () => void } | null = null;
+    let readerRef: { reset: () => void } | null = null;
 
     async function start() {
       try {
@@ -44,10 +44,11 @@ export function BarcodeScanner({ onResult, onClose }: Props) {
         hints.set(DecodeHintType.TRY_HARDER, true);
 
         const reader = new BrowserMultiFormatReader(hints);
+        readerRef = reader;
 
         if (!videoRef.current || stoppedRef.current) return;
 
-        controls = await reader.decodeFromConstraints(
+        await reader.decodeFromConstraints(
           { video: { facingMode: "environment" } },
           videoRef.current,
           async (result, err) => {
@@ -55,7 +56,7 @@ export function BarcodeScanner({ onResult, onClose }: Props) {
             if (err) return;
 
             stoppedRef.current = true;
-            controls?.stop();
+            reader.reset();
             await lookupBarcode(result.getText());
           }
         );
@@ -77,7 +78,7 @@ export function BarcodeScanner({ onResult, onClose }: Props) {
 
     return () => {
       stoppedRef.current = true;
-      controls?.stop();
+      readerRef?.reset();
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
