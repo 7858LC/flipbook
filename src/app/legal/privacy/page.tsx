@@ -83,11 +83,11 @@ export default function PrivacyPolicy() {
         <ul className="list-disc list-inside space-y-1">
           <li>
             <strong className="text-[#f5f5f5]">Google</strong> — Sign-in and spreadsheet storage.
-            Governed by Google's Privacy Policy.
+            Governed by Google&apos;s Privacy Policy.
           </li>
           <li>
             <strong className="text-[#f5f5f5]">Stripe</strong> — Payment processing. Governed by
-            Stripe's Privacy Policy. We never see or store your full card number.
+            Stripe&apos;s Privacy Policy. We never see or store your full card number.
           </li>
           <li>
             <strong className="text-[#f5f5f5]">Sentry</strong> — Error tracking. Errors are
@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
             from Settings → Danger Zone
           </li>
           <li>
-            <strong className="text-[#f5f5f5]">Revoke access</strong> — Remove {appName}'s access
+            <strong className="text-[#f5f5f5]">Revoke access</strong> — Remove {appName}&apos;s access
             to your Google account at any time via{" "}
             <a
               href="https://myaccount.google.com/permissions"
@@ -146,7 +146,7 @@ export default function PrivacyPolicy() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-base font-semibold text-[#f5f5f5] mb-2">9. Children's Privacy</h2>
+        <h2 className="text-base font-semibold text-[#f5f5f5] mb-2">9. Children&apos;s Privacy</h2>
         <p>
           {appName} is not intended for users under 13. We do not knowingly collect personal
           information from children under 13.

@@ -11,7 +11,7 @@ export default function TermsOfService() {
       <section className="mb-8">
         <h2 className="text-base font-semibold text-[#f5f5f5] mb-2">1. Acceptance of Terms</h2>
         <p>
-          By creating an account or using {appName} ("the Service"), you agree to be bound by these
+          By creating an account or using {appName} (&quot;the Service&quot;), you agree to be bound by these
           Terms of Service and our Privacy Policy. If you do not agree, do not use the Service.
         </p>
       </section>
@@ -81,7 +81,7 @@ export default function TermsOfService() {
       <section className="mb-8">
         <h2 className="text-base font-semibold text-[#f5f5f5] mb-2">7. Disclaimer of Warranties</h2>
         <p>
-          The Service is provided "as is" without warranties of any kind. We do not guarantee
+          The Service is provided &quot;as is&quot; without warranties of any kind. We do not guarantee
           uptime, accuracy of calculations, or that the Service will be error-free. Use of the
           Service is at your own risk.
         </p>

@@ -27,6 +27,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
   componentDidCatch(error: unknown, info: React.ErrorInfo) {
     // In production Sentry will capture this automatically via
     // the @sentry/nextjs instrumentation. Log here for dev.
+    // eslint-disable-next-line no-console
     console.error("[ErrorBoundary]", error, info.componentStack);
   }
 
