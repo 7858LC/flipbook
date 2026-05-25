@@ -1,0 +1,16 @@
+{
+  "name": "FlipBook",
+  "short_name": "FlipBook",
+  "description": "Reseller inventory and tax tracker",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#0f0f0f",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
